@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<launch>
+
+	<!-- rviz -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find robotsterrestres_exercise2)/rviz/config.rviz" required="true"/>
+	<!-- rosbag play -->
+	<node pkg="rosbag" type="play" name="player" output="screen" args="--clock $(find robotsterrestres_exercise2)/src/encoders_rosbag.bag"/>
+	<!-- rodnode -->
+	<node name="listener" pkg="robotsterrestres_exercise2" type="listener"/>
+
+</launch>
